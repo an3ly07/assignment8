@@ -1,0 +1,19 @@
+{% extends 'booking/base.html' %}
+
+{% block content %}
+<h2>Available Slots</h2>
+
+{% for slot in slots %}
+    <div class="card">
+        <h3>{{ slot.provider }}</h3>
+        <p>{{ slot.start_time }}</p>
+
+        {% if slot.is_booked %}
+            <span class="booked">Booked</span>
+        {% else %}
+            <button>Book</button>
+        {% endif %}
+    </div>
+{% endfor %}
+
+{% endblock %}

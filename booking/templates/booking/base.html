@@ -1,14 +1,21 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Booking System</title>
-    {% load static %}  
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">  
+    <title>Appointment Booking</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <h1>Appointment Booking System</h1>
 
-    
-    {% block content %}{% endblock %}
+<nav>
+    <a href="/">Home</a>
+    <a href="/slots/">Slots</a>
+</nav>
+
+<div class="container">
+    {% block content %}
+    {% endblock %}
+</div>
+
 </body>
 </html>

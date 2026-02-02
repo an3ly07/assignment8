@@ -13,7 +13,7 @@ class TimeSlot(models.Model):
     provider = models.ForeignKey(Provider, on_delete=models.CASCADE)
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
-    is_available = models.BooleanField(default=True)
+    is_booked = models.BooleanField(default=False)
 
     def __str__(self):
         return f"{self.provider} | {self.start_time}"
@@ -21,9 +21,9 @@ class TimeSlot(models.Model):
 
 class Booking(models.Model):
     client = models.ForeignKey(User, on_delete=models.CASCADE)
-    time_slot = models.ForeignKey(TimeSlot, on_delete=models.CASCADE)
+    slot = models.ForeignKey(TimeSlot, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
-    is_cancelled = models.BooleanField(default=False)
 
     def __str__(self):
-        return f"{self.client} → {self.time_slot}"
+        return f"{self.client} booked {self.slot}"
+
