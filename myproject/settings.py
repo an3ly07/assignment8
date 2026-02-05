@@ -117,5 +117,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']
+# App static dirs (e.g. booking/static/) are discovered via APP_DIRS in TEMPLATES
+# Add STATICFILES_DIRS only if you add a project-level static folder
+# STATICFILES_DIRS = [BASE_DIR / 'static']
 

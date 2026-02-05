@@ -1,6 +1,31 @@
 {% extends 'booking/base.html' %}
+{% load static %}
 
 {% block content %}
-<h1>Welcome to Appointment Booking</h1>
-<p>Book appointments with trusted doctors</p>
+<section class="hero">
+    <p class="hero-label">Clinic &amp; Online Consultations</p>
+    <h1 class="hero-title">Welcome to Dr. Anels Clinic</h1>
+    <p class="hero-subtitle">
+        Book appointments with specialist doctors. We offer quality care in gynecology, dermatology and cardiology.
+    </p>
+    <a href="{% url 'slots' %}" class="main-btn">Make an appointment</a>
+</section>
+
+<section class="home-specializations">
+    <header class="specializations-header">
+        <h2 class="specializations-title">Choose a specialty</h2>
+        <p class="specializations-lead">Select a specialty to see available doctors and time slots.</p>
+    </header>
+    <div class="specializations">
+        <a href="{% url 'specialization' 'dermatologist' %}" class="spec-card">
+            <span class="spec-card-label">Dermatologist</span>
+        </a>
+        <a href="{% url 'specialization' 'gynecologist' %}" class="spec-card">
+            <span class="spec-card-label">Gynecologist</span>
+        </a>
+        <a href="{% url 'specialization' 'cardiologist' %}" class="spec-card">
+            <span class="spec-card-label">Cardiologist</span>
+        </a>
+    </div>
+</section>
 {% endblock %}
